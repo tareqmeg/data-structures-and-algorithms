@@ -74,7 +74,7 @@ const getCourseKeys = (obj) => {
   // Solution code here...
   let objKeys = object.Keys(obj);
   objKeys.forEach((item)=>{
-    newArr.push(item);
+    newArr.push(item[3]);
   });
     
   return newArr;
@@ -90,6 +90,12 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
+  let objVal = Object.values(obj);
+  if (objVal.includes(value)){
+    return true;
+  }else{
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,6 +132,12 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  let arrEntities = Object.entries(arr);
+  
+  arrEntities.forEach((item)=>{
+    houses.push(item[1].house);
+  });
+    
   return houses;
 };
 
