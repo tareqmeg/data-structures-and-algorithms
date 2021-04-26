@@ -155,6 +155,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let arrEntities = Object(arr);
+ arrEntities.forEach((item))
+  if ((item[2] !== null) && (item[0] === character)){
+    return true
+  }else{
+    false
+  }
+
+
+
+
 
 };
 
