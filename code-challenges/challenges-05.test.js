@@ -26,6 +26,11 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
+  starWarsArr.sort((a,b)=> {
+    if(Number(a.height) > Number(b.height)) {return -1};
+    if(Number(a.height) < Number(b.height)) {return 1};
+  })
+  return starWarsArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,17 +92,10 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
-  let result = [];
-  arr.forEach((item)=>{
-    result.push(item.shift());
-  })
+  let newArr = arr.split('');
+  return newArr; 
     
-    
-    
-  }
-  return result;
-
-};
+}
 
 
 /* ------------------------------------------------------------------------------------------------
