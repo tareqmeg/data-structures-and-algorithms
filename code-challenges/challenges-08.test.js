@@ -9,8 +9,13 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str){
   // Solution code here...
-  let str1 = str.split("");
-  str1.slice()
+  
+  if (str.length <= 10){
+    return str.split('');
+
+  }else{
+    return str.split('').splice(str.length - 10, 10);
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,7 +28,7 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  
+  return arr.filter(item => typeof item === 'number');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,6 +41,7 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
+  return arr.filter(item => /.*and.*/gi.test(item));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,6 +54,8 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+ return arr.filter(value => value%2 !== 0);
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,6 +71,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  return arr.filter(item => /[a,e,i,o,u]/gi.test(item));
 };
 
 
@@ -76,6 +85,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  return arr.filter(generalValue => !forbiddenValues.includes(generalValue));
 };
 
 /* ------------------------------------------------------------------------------------------------
