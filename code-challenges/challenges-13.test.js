@@ -21,6 +21,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
+  let arrayofLetters =  (arr) => {
+    return arr.map(str => str.substr(0, 1));
+  };
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,6 +48,8 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  let x= arr.filter(item => typeof item === 'number');
+return x.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
